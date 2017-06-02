@@ -1,0 +1,17 @@
+#! /bin/sh
+sudo mpc stop
+systemctl stop mpd.socket 
+sudo /etc/init.d/mpd stop
+mkdir -p /update/tmpi
+apt-get update
+apt-get install -y git-core 
+git clone https://github.com/norrest/tornado.git /update/tmpi/
+sudo chmod -R 777 /update/tmpi
+sudo cp -pfR /update/tmpi/etc/ /
+sudo cp -pfR /update/tmpi/var/ /
+sudo cp -pfR /update/tmpi/sbin/ /
+sudo cp -pfR /update/tmpi/bin/ /
+sudo bash /sbin/tupdate
+sudo rm -R /update/tmpi
+sudo rm -R /sbin/tupdate
+sudo service php5-fpm restart && sudo service nginx restart  && sudo service mpd restart 
