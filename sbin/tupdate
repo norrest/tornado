@@ -1,0 +1,4 @@
+#! /bin/sh
+apt-get -y install avahi-daemon avahi-autoipd libnss-mdns avahi-utils libconfig-dev
+apt-get -y install samba samba-common-bin cifs-utils
+exit 0
