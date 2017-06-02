@@ -14,5 +14,5 @@ sudo cp -pfR /update/tmpi/bin/ /
 sudo bash /sbin/tupdate
 sudo rm -R /update/tmpi
 sudo rm -R /sbin/tupdate
-sudo service php5-fpm restart && sudo service nginx restart  && sudo service mpd restart 
+sudo service mpd restart 
 exit 0
